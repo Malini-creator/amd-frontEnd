@@ -1,0 +1,105 @@
+::ng-deep html {
+  background-color: #f4f4f4;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 350px;
+  margin: 150px auto 80px;
+}
+.loginContainer img {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.loginContainer h2 {
+  font-weight: 700;
+  font-size: 18px;
+  color: #4a4b4d;
+  margin-bottom: 16px;
+  font-family: "poppins";
+}
+.loginContainer p {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #4d4f5c;
+  font-family: "poppins";
+}
+.loginContainer p.error {
+  color: #fb6868;
+}
+
+.loginContainer.inpuWrap .close-icon{
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  color: #FB6868;
+  cursor: pointer;
+}
+
+.loginContainer .inpuWrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.loginContainer .inpuWrap.marBot {
+  margin-bottom: 32px;
+  position: relative;
+}
+.loginContainer .inpuWrap label {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #1c1d1f;
+  font-family: "poppins";
+}
+.close-icon {
+  margin-top: -8%;
+  margin-left: 95%;
+  float: left;
+  color: red !important;
+  position: absolute;
+}
+
+.inputMobile{
+  position: relative;
+  
+}
+.icon{
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  font-size:20px;
+  color:red ;
+}
+
+
+.loginContainer .inpuWrap input {
+  border: 1px solid #d1d1d2;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px 8px;
+  outline: none;
+  font-size: 14px;
+  font-family: "poppins";
+  width: 95%;
+}
+.loginContainer .inpuWrap input.error {
+  border-color: #fb6868;
+}
+.button {
+  background-color: #43425d;
+  padding: 14px 30px;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: "poppins";
+}
+.disable-input{
+  background-color: #a1a1a1 !important;
+}
+
+button:disabled,
+button[disabled]{
+    background-color: #a1a1a1 !important;
+}

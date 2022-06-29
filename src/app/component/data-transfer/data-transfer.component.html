@@ -1,0 +1,34 @@
+<!--Chart Response-->
+
+<div class="TableStyle">
+  <div style="display: block">
+    <canvas baseChart  [datasets]="lineChartData" [labels]="lineChartLabels" [legend]="lineChartLegend" 
+    [type]="lineChartType" [plugins]="lineChartPlugins" [options]="lineChartOptions">
+    </canvas>
+  </div>
+</div>
+
+<!-- List of response-->
+
+<div class="tableCon">
+            <div class="table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Time</th>
+                            <th>Temperature</th>
+                            <th>Sms Action Payload</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of chartResponse; let i = index">
+                            <td>{{user.City}}</td>
+                            <td>{{user.Time | date: "YYYY-MM-dd, hh:mm"}}</td>
+                            <td>{{user.Temperature - 273.15 | number:'1.0-2'}} &#176; C</td>
+                            <td class="smsData"><p>{{user.Sms_Action}}</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+</div>
