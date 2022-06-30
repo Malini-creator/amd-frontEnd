@@ -86,7 +86,7 @@
   border-color: #fb6868;
 }
 .button {
-  background-color: #43425d;
+  background-color: #43425D;
   padding: 14px 30px;
   width: 100%;
   border-radius: 4px;
@@ -94,12 +94,20 @@
   outline: none;
   color: #fff;
   font-family: "poppins";
+  cursor: pointer;
 }
 .disable-input{
-  background-color: #a1a1a1 !important;
+  background-color: #E8E8E9  !important;
+  border: none; 
+  color: #A1A1A1 !important;
 }
 
 button:disabled,
 button[disabled]{
-    background-color: #a1a1a1 !important;
+    background-color: #A1A1A1 !important;
+    border: none;
+    color: #fff !important;
+}
+.bottom-spacing {
+  padding-bottom: 50px;
 }

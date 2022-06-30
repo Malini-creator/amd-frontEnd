@@ -4,11 +4,11 @@ import { ApiService } from 'src/app/service/api.service';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-data-transfer',
-  templateUrl: './data-transfer.component.html',
-  styleUrls: ['./data-transfer.component.css']
+  selector: 'app-weather-report',
+  templateUrl: './weather-report.component.html',
+  styleUrls: ['./weather-report.component.css']
 })
-export class DataTranferComponent implements OnInit {
+export class WeatherReportComponent implements OnInit {
 
   //local variable decalaration
   public lineChartLabels = [];
@@ -20,13 +20,12 @@ export class DataTranferComponent implements OnInit {
   public chartResponse = [];
   public lineChartOptions: ChartConfiguration['options'] = {
     scales: {
-      x: {
+      x: {  
         grid: {
-          display: false
+          display: true,
         }
       },
       y: {
-        min: 0,
         grid: {
           color: '#f5f5f5'
         },
@@ -51,10 +50,10 @@ export class DataTranferComponent implements OnInit {
           this.lineChartLabels = [...this.lineChartLabels, moment(res['Time']).format('hh:mm')];
           this.lineData = [...this.lineData, res['Temperature'] - 273.15];
           this.lineChartData = [{
-            data: this.lineData, label: res['City'] + " Temprature", type: "line",
-            borderColor: '#3443cf',
-            pointBackgroundColor: '#3443cf',
-            pointBorderColor: '#3443cf'
+            data: this.lineData, label: res['City'] + " Temperature", type: "line",
+            borderColor: '#65A0BA',
+            pointBackgroundColor: '#65A0BA',
+            pointBorderColor: '#65A0BA'
           }]
         }
       }

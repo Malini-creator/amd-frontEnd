@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DataTranferComponent } from './data-transfer.component';
+import { WeatherReportComponent } from './weather-report.component';
 
 
-describe('DataTranferComponent', () => {
-  let component: DataTranferComponent;
-  let fixture: ComponentFixture<DataTranferComponent>;
+describe('WeatherReportComponent', () => {
+  let component: WeatherReportComponent;
+  let fixture: ComponentFixture<WeatherReportComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataTranferComponent ]
+      declarations: [ WeatherReportComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataTranferComponent);
+    fixture = TestBed.createComponent(WeatherReportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

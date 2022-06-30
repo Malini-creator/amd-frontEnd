@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.cityerror = ''
       }
       if (this.form.value.number == '') {
-        this.numbererror = 'Please add a valid phone number'
+        this.numbererror = 'Please add a valid mobile number'
       } else {
         this.numbererror = ''
       }
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         };
 
         /* First time API calling */
-        this.apiService.login(formData).subscribe((value) => {
+        this.apiService.weatherCheck(formData).subscribe((value) => {
           if (value.statusCode === 200) {
             if (JSON.parse(value.data.Sms_Action).statusCode === 500) {
               value.data.Sms_Action = []
@@ -77,7 +77,14 @@ export class LoginComponent implements OnInit {
           }
         }, (err) => {
           console.log(err)
-          this.numbererror = 'Please add a valid phone number'
+          this.showChart = false;
+          this.loginDisable = false;
+          if (err.error.message === 'city not found') {
+            this.cityerror = 'Please add a valid city'
+          }
+          else if (err.error.message === 'Invalid mobile number' || err.error.message === "Cannot read property 'to' of undefined") {
+            this.numbererror = 'Please add a valid mobile number'
+          }
           this.submitted = true
         }
         );
@@ -87,7 +94,7 @@ export class LoginComponent implements OnInit {
 
   /* Function calling after every one minute upto 10 times*/
   getChartResponse(formData) {
-    this.apiService.login(formData).subscribe((value) => {
+    this.apiService.weatherCheck(formData).subscribe((value) => {
       if (value.statusCode === 200) {
         if (JSON.parse(value.data.Sms_Action).statusCode === 500) {
           value.data.Sms_Action = []
@@ -104,7 +111,7 @@ export class LoginComponent implements OnInit {
       }
     }, (err) => {
       console.log(err)
-      this.numbererror = 'Please add a valid phone number'
+      this.numbererror = 'Please add a valid mobile number'
       this.submitted = true
     }
     );
@@ -112,7 +119,6 @@ export class LoginComponent implements OnInit {
 
   /* Clearing feilds based on error  */
   clearField(feild: string = '') {
-    
     if (feild === "city") {
       this.cityerror = "";
       this.form.controls['city'].setValue("");

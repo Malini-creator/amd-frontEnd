@@ -11,13 +11,13 @@ import { BehaviorSubject } from 'rxjs';
 
 export class ApiService {
 
-  // global variable
+  // weather data update
   public chartData  : BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
   constructor(public http: HttpClient) { }
 
-  //login API
-  login(data): Observable<any> {
+  //weather API 
+  weatherCheck(data): Observable<any> {
     return this.http.post(environment.BASE_URL + 'weatherCheck', data);
   }
 

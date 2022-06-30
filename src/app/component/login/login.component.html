@@ -6,8 +6,10 @@
     <!--City-->
     <div class="inpuWrap">
       <label for="City">City</label>
-      <input id="City" type="text" [ngClass]="showChart ? 'disable-input' : ''" [ngStyle]="{'border-color': cityerror ? 'red' : '' }" [readonly]="loginDisable" formControlName="city">
-      <p class="close-icon" *ngIf="!showChart && cityerror && form.value.city.length" (click)="clearField('city')">&#x2715;</p>
+      <div class="inputMobile">
+        <input id="City" type="text" [ngClass]="showChart ? 'disable-input' : ''" [ngStyle]="{'border-color': cityerror ? 'red' : '' }" [readonly]="loginDisable" formControlName="city" autocomplete="off">
+        <p class="close-icon" *ngIf="submitted && !showChart && cityerror" (click)="clearField('city')">&#x2715;</p> 
+      </div>
       <p class="error" *ngIf="cityerror">{{cityerror}}</p>
     </div>
 
@@ -15,10 +17,10 @@
     <div class="inpuWrap marBot">
       <label for="MobileNumber">Mobile Number</label>
       <div class="inputMobile">
-        <input id="MobileNumber" type="text" [ngClass]="showChart ? 'disable-input' : ''" [readonly]="loginDisable" [ngStyle]="{'border-color': numbererror ? 'red' : '' }"  maxlength="16" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" formControlName="number">
-        <p class="close-icon" *ngIf="submitted && !showChart && form.value.number > 0" (click)="clearField('number')">&#x2715;</p>
+        <input id="MobileNumber" type="text" [ngClass]="showChart ? 'disable-input' : ''" [readonly]="loginDisable" [ngStyle]="{'border-color': numbererror ? 'red' : '' }" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" formControlName="number" maxlength="16" autocomplete="off">
+        <p class="close-icon" *ngIf="submitted && !showChart && numbererror && form.value.number > 0" (click)="clearField('number')">&#x2715;</p>
       </div>
-      <p *ngIf="!numbererror && !loginDisable">Please add a country code before mobile number</p>
+      <p *ngIf="!numbererror ">Please add a country code before mobile number</p>
       <p class="error" *ngIf="numbererror">{{numbererror}}</p>
     </div>
 
@@ -28,6 +30,6 @@
     </div>
   </form>
 </div>
-<div *ngIf="showChart">
-  <app-data-transfer></app-data-transfer>
+<div  class="bottom-spacing" *ngIf="showChart">
+  <app-weather-report></app-weather-report>
 </div>

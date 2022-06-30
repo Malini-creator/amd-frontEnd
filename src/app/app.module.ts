@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataTranferComponent } from './component/data-transfer/data-transfer.component';
+import { WeatherReportComponent } from './component/weather-report/weather-report.component';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,8 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    DataTranferComponent,
+    WeatherReportComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgChartsModule,
     HttpClientModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
